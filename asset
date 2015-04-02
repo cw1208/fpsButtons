@@ -1,1 +1,18 @@
+// for fpsButton platform game
+//OnTriggerEnter takes player to next level or restarts level depending on GO tag
 
+function OnTriggerEnter(){
+
+	if (gameObject.GetComponent(AudioSource) != null) {
+		audio.Play();
+		}
+		
+	yield WaitForSeconds(0.5);
+
+	if (gameObject.tag == "Finish") {
+		Application.LoadLevel(Application.loadedLevel+1);
+		}
+	else {
+		Application.LoadLevel(Application.loadedLevel);
+		}
+ }
